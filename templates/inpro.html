@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>E-Cart</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/image/icon/apple-touch-icon.png'%}" >
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/icons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/icons/site.html' %}">
+    <link rel="mask-icon" href="{% static 'assets/images/icons/safari-pinned-tab.svg' %}" color="#666666">
+
+    <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{% static 'assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css' %}">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/magnific-popup/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/jquery.countdown.css' %}">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/skins/skin-demo-2.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/demos/demo-2.css' %}">
+     <style>
+   .product{
+       border:1px double  black;
+   }
+   .btn-product{
+       background-color: #1b1e21;}
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header header-2 header-intro-clearance">
+
+                       <div class="header-bottom sticky-header">
+                <div class="container">
+                    <div class="header-left">
+                    <a href="index.html" class="logo">
+                        <img src="{% static 'logo1.png' %}" alt="Molla Logo" width="180" height="20">
+                    </a>
+                    </div>
+                    <div class="header-left">
+
+                        <div class="dropdown category-dropdown">
+    <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Browse Categories">
+                                Browse Categories
+                            </a>
+                            <div class="dropdown-menu">
+                                    <nav class="side-nav">
+                                        <ul class="menu-vertical sf-arrows">
+                                        <li><a href="{% url 'digitalproducts' %}"><b>Digital-Products</b> </a></li>
+                                        <li><a href="{% url 'furniture' %}"><b>Furniture</b></a></li>
+                                        <li><a href="{% url 'clothing' %}"><b>Clothing</b></a></li>
+                                        <li><a href="{% url 'household' %}"><b>Housholds</b></a></li>
+
+                                    </ul><!-- End .menu-vertical -->
+                                </nav><!-- End .side-nav -->
+                            </div><!-- End .dropdown-menu -->
+                        </div><!-- End .category-dropdown -->
+                    </div><!-- End .header-left -->
+
+                    <div class="header-center">
+                        <nav class="main-nav">
+                            <ul class="menu">
+                                <li class="megamenu-container active">
+                                    <a href="{% url 'index' %}">Home</a>
+
+                                </li>
+                               <li><a href="{% url 'inpro' %}" >
+
+                                Products</a> </li>
+                                <li>
+
+                                    <a href="#" >
+                                     User Account</a>
+                                    <ul class="menu-vertical">
+                                        <li>
+                                            <a href="{% url 'register' %}"><b>User-Register</b> </a></li>
+
+                                         <li><a href="{% url 'login' %}"><b>User-Login</b></a>
+                                        </li>
+                                    </ul>
+
+
+                                </li>
+                                <li>
+                                    <a href="#">Admin Account</a>
+                                    <ul class="menu-vertical">
+                                        <li><a href="{% url 'alogin' %}"><b>Admin Login</b></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="{% url 'contact' %}" >Contact-US</a>
+                                </li>
+
+                            </ul><!-- End .menu -->
+                        </nav><!-- End .main-nav -->
+                    </div><!-- End .header-center -->
+                </div>
+                       </div>
+        </header>
+        <main class="main">
+            <div class="intro-slider-container">
+                <div class="owl-carousel owl-simple owl-light owl-nav-inside" data-toggle="owl" data-owl-options='{"nav": false}'>
+
+
+                    <div class="intro-slide" style="background-image: url({% static 'assets/images/demos/demo-2/slider/slide-3.jpg' %});">
+                        <div class="container intro-content">
+                            <h3 class="intro-subtitle">Deals and Promotions</h3><!-- End .h3 intro-subtitle -->
+                            <h1 class="intro-title">Ypperlig <br>Coffee <br><span class="text-primary"><sup>INR</sup>120</span></h1><!-- End .intro-title -->
+
+                          <!--  <a href="category.html" class="btn btn-primary">
+                                <span>Shop Now</span>
+                                <i class="icon-long-arrow-right"></i>
+                            </a>-->
+                        </div><!-- End .container intro-content -->
+                    </div><!-- End .intro-slide -->
+
+                    <div class="intro-slide" style="background-image: url({% static 'assets/images/demos/demo-2/slider/slide-3.jpg' %});">
+                        <div class="container intro-content">
+                            <h3 class="intro-subtitle">Living Room</h3><!-- End .h3 intro-subtitle -->
+                            <h1 class="intro-title">
+                                Make Your Living Room <br>Work For You.<br>
+                                <span class="text-primary">
+                                    <sup class="text-white font-weight-light">from</sup><sup>INR</sup>10,000
+                                </span>
+                            </h1><!-- End .intro-title -->
+ <!--
+                            <a href="category.html" class="btn btn-primary">
+                                <span>Shop Now</span>
+                                <i class="icon-long-arrow-right"></i>
+                            </a>-->
+                        </div><!-- End .container intro-content -->
+                    </div><!-- End .intro-slide -->
+                </div><!-- End .owl-carousel owl-simple -->
+
+
+            </div><!-- End .intro-slider-container -->
+            <div class="page-content pb-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1">
+                    </div>
+                </div>
+
+                    <h2 class="title text-center mb-4" style="color: #1417c8">Available Products <span>With-US</span></h2><!-- End .title text-center -->
+
+                    <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                        data-owl-options='{
+                            "nav": false,
+                            "dots": true,
+                            "margin": 20,
+                            "loop": false,
+                            "responsive": {
+                                "0": {
+                                    "items":1
+                                },
+                                "480": {
+                                    "items":2
+                                },
+                                "768": {
+                                    "items":3
+                                },
+                                "992": {
+                                    "items":4
+                                },
+                                "1200": {
+                                    "items":4,
+                                    "nav": true,
+                                    "dots": false
+                                }
+                            }
+                        }'>
+                        <div class="product product-7 text-center">
+                            <figure class="product-media">
+
+                                <a href="product.html">
+                                    <img src="{% static 'img1.jpg' %}" alt="Product image" class="product-image"style="width: 100%;height: 250px;">
+                                </a>
+
+
+
+
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="{% url 'digitalproducts' %}">---Digital products categories ---</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="#">Watch</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    INR 2500.00
+                                </div><!-- End .product-price -->
+
+
+
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product product-7 text-center">
+                            <figure class="product-media">
+
+                                <a href="product.html">
+                                    <img src="{% static 'img2.jpg' %}" alt="Product image" class="product-image"style="width: 100%;height: 250px;">
+                                </a>
+
+
+
+
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="{% url 'clothing' %}">---Clothing categories---</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">FROCK</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    <span class="out-price">INR 5120.00</span>
+                                </div><!-- End .product-price -->
+
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+                        <div class="product product-7 text-center">
+                            <figure class="product-media">
+
+                                <a href="product.html">
+                                    <img src="{% static 'ii1.jpg' %}" alt="Product image" class="product-image"style="width: 100%;height: 250px;">
+                                </a>
+
+
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="{% url 'furniture' %}">---Furniture categories---</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">SOFA</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    INR 4110.00
+                                </div><!-- End .product-price -->
+
+
+
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+
+
+
+                        <div class="product product-7 text-center">
+                            <figure class="product-media">
+                                <a href="product.html">
+                                    <img src="{% static 'ii2.jpg' %}" alt="Product image" class="product-image"style="width: 100%;height: 250px;">
+                                </a>
+
+
+
+
+                            </figure><!-- End .product-media -->
+
+                            <div class="product-body">
+                                <div class="product-cat">
+                                    <a href="{% url 'household' %}">---Household categories---</a>
+                                </div><!-- End .product-cat -->
+                                <h3 class="product-title"><a href="product.html">SPOONS AND PLATES</a></h3><!-- End .product-title -->
+                                <div class="product-price">
+                                    INR 2576.00
+                                </div><!-- End .product-price -->
+
+                            </div><!-- End .product-body -->
+                        </div><!-- End .product -->
+                    </div><!-- End .owl-carousel -->
+                </div><!-- End .container -->
+            </div><!-- End .page-content -->
+        </main><!-- End .main -->
+ <!-- Plugins JS File -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.hoverIntent.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/superfish.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.plugin.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+    <!-- Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+                <script src="{% static 'assets/js/demos/demo-2.js' %}"></script>
+</body>
+
+
+<!-- molla/index-1.html  22 Nov 2019 09:55:32 GMT -->
+</html>
